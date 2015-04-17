@@ -1,8 +1,10 @@
 var categories =[
 	"comuni",
-	"affittacamere"
+	"affittacamere",
+	"ristoranti"
 ];
 var fs = require("fs");
+var Mustache = require("mustache");
 function processcategory(category){
 	console.log(category);
 	var categoryfilename = __dirname + "/json/" + category + ".json";
@@ -34,7 +36,15 @@ function processcategoryelement(category,categoryelement){
 	var filename = categoryelement.name.replace(/[^a-z0-9]/gi,"_").toLowerCase();
 	var filename = categoryfolder + "/" + filename + ".html";
 	console.log(filename);
-	fs.writeFileSync(filename,JSON.stringify(categoryelement));
+	fs.writeFileSync(filename,processtemplate(category,categoryelement));
+}
+
+function processtemplate(category,categoryelement){
+	var templatefilename = __dirname + "/templates/" + category + ".tpl";
+	var templatecontent = fs.readFileSync(templatefilename,"utf8");
+
+	var output = Mustache.render(templatecontent, categoryelement);
+	return output;
 }
 
 function main(){
