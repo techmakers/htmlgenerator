@@ -1,7 +1,24 @@
 var categories =[
 	"comuni",
 	"affittacamere",
-	"ristoranti"
+	"ristoranti",
+	"alberghidiffusi",
+	"agriturismi",
+	"aziendeagricole",
+	"bb",
+	"campeggi",
+	"caseferie",
+	"casevacanza",
+	"esercizicommerciali",
+	"hotel",
+	"locande",
+	"ostelli",
+	"parchivacanza",
+	"residenzeepoca",
+	"residenzeturistiche",
+	"rifugi",
+	"strutturericettive",
+	"villaggituristici"
 ];
 var fs = require("fs");
 var Mustache = require("mustache");

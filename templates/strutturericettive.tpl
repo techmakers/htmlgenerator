@@ -1,0 +1,1 @@
+{{name}} strutturericettive {{id}}

@@ -1,0 +1,1 @@
+{{name}} ostelli {{id}}
