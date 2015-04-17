@@ -24,13 +24,17 @@ function processcategorycontent(category,categorycontent){
 
 function processcategoryelement(category,categoryelement){
 	console.log(category,categoryelement.name);
+	
 	var categoryfolder = __dirname + "/html/" + category;
 	console.log(categoryfolder);
-	var filename = categoryelement.name.replace(/[^a-z0-9]/gi,"_").toLowerCase();
+	if (!fs.existsSync(categoryfolder)){
+		fs.mkdirSync(categoryfolder);
+	}
 	
-	var filename = categoryfolder + "/" + filename;
+	var filename = categoryelement.name.replace(/[^a-z0-9]/gi,"_").toLowerCase();
+	var filename = categoryfolder + "/" + filename + ".html";
 	console.log(filename);
-	fs.writeFileSync(filename,categoryelement);
+	fs.writeFileSync(filename,JSON.stringify(categoryelement));
 }
 
 function main(){
