@@ -51,7 +51,7 @@ function processcategoryelement(category,categoryelement){
 	}
 	
 	var filename = categoryelement.name.replace(/[^a-z0-9]/gi,"_").toLowerCase();
-	var filename = categoryfolder + "/" + filename + ".html";
+	filename = categoryfolder + "/" + filename + ".html";
 	console.log(filename);
 	fs.writeFileSync(filename,processtemplate(category,categoryelement));
 }
@@ -59,9 +59,7 @@ function processcategoryelement(category,categoryelement){
 function processtemplate(category,categoryelement){
 	var templatefilename = __dirname + "/templates/" + category + ".tpl";
 	var templatecontent = fs.readFileSync(templatefilename,"utf8");
-
-	var output = Mustache.render(templatecontent, categoryelement);
-	return output;
+	return Mustache.render(templatecontent, categoryelement);
 }
 
 function main(){
@@ -70,4 +68,5 @@ function main(){
 		processcategory(category);
 	}
 }
+
 main();
