@@ -2,5 +2,8 @@
 	"name": "htlmgenerator", 
 	"version": "0.0.1",
 	"description": "htmlgenerator",
-	"author": "mara sabini <marasabini@live.it>"
+	"author": "mara sabini <marasabini@live.it>",
+  	"dependencies":{
+	  "mustache" : "*"
+	}
 }
