@@ -20,8 +20,10 @@ var categories =[
 	"strutturericettive",
 	"villaggituristici"
 ];
+
 var fs = require("fs");
 var Mustache = require("mustache");
+
 function processcategory(category){
 	console.log(category);
 	var categoryfilename = __dirname + "/json/" + category + ".json";
