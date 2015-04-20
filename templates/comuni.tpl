@@ -2,26 +2,27 @@ comune {{id}}
 zona altimetrica:{{AltimetricZone}}
 altitudine:{{Altitude}}
 città:{{City}}
-{{#MainCity.length}}
+{{#MainCity}}
 città principale:{{MainCity}}
-{{/MainCity.length}} 
-{{^MainCity.length}}città principale: nessuna{{/MainCity.length}}
+{{/MainCity}} 
+{{^MainCity}}città principale: nessuna{{/MainCity}}
 zona montuosa:{{MountainZone}}
 popolazione:{{Population}}
 zona marina:{{Seaside}}
 area:{{area}}
-mappa:{{map}}
+mappa:{{{map}}}
 nome:{{name}}
 posizione:{{position}}
-risultato:{{result}}
-        {{provider}}
+{{#result}}
+risultato:{{provider}}
+{{/result}}
 riviera:{{riviera}}
 regione:{{state}}
 wiki:{{wiki}}
-{{#zipcode.length}}
+{{#zipcode}}
 cap:{{zipcode}}
-{{/zipcode.length}} 
-{{^zipcode.length}}cap: nessun dato{{/zipcode.length}}
+{{/zipcode}}
+{{^zipcode}}cap: nessun dato{{/zipcode}}
 
 
 

@@ -4,6 +4,9 @@
 	"description": "htmlgenerator",
 	"author": "mara sabini <marasabini@live.it>",
   	"dependencies":{
-	  "mustache" : "*"
+	  "mustache" : "*",
+	  "request" : "*",
+	  "async" : "*",
+	  "tough-cookie": "*"
 	}
 }
