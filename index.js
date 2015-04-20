@@ -59,7 +59,13 @@ function processcategoryelement(category,categoryelement){
 function processtemplate(category,categoryelement){
 	var templatefilename = __dirname + "/templates/" + category + ".tpl";
 	var templatecontent = fs.readFileSync(templatefilename,"utf8");
+<<<<<<< Updated upstream
 	return Mustache.render(templatecontent, categoryelement);
+=======
+	
+	var output = Mustache.render(templatecontent, categoryelement);
+	return output;
+>>>>>>> Stashed changes
 }
 
 function main(){
