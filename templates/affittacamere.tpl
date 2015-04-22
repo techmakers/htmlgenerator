@@ -1,8 +1,8 @@
 {{name}} affittacamere {{id}} 
 indirizzo:{{address}}
-{{#stars.length}} 
+{{#stars}}
 stelle:{{stars}}
-{{/stars.length}} 
+{{/stars}}
 {{^stars.length}}stelle: nessun dato{{/stars.length}}
 {{#city.length}} 
 città:{{city}}

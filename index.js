@@ -4,8 +4,7 @@
 
 var categories =[
     "comuni",
-    /*
-     "affittacamere",
+    /* "affittacamere",
      "ristoranti",
      "alberghidiffusi",
      "agriturismi",
@@ -23,11 +22,22 @@ var categories =[
      "residenzeturistiche",
      "rifugi",
      "strutturericettive",
-     "villaggituristici"
-     */
+     "villaggituristici"*/
+
 ];
 var jsondownloader = require("./jsondownloader") ;
 var jsondataprocessor = require("./jsondataprocessor") ;
+
+function processtemplate(category,categoryelement){
+	var templatefilename = __dirname + "/templates/" + category + ".tpl";
+	var templatecontent = fs.readFileSync(templatefilename,"utf8");
+
+	return Mustache.render(templatecontent, categoryelement);
+
+	var output = Mustache.render(templatecontent, categoryelement);
+	return output;
+
+}
 
 
 jsondownloader.main(categories,function(err){
