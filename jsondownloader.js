@@ -2,25 +2,21 @@ var request = require('request');
 var async = require('async') ;
 var fs = require('fs');
 
-function downloadCategory(category, categoryelement){
+function downloadCategory(category){
     request.get({
             url:"http://portofino.celeweb.eu:1337/" + category + "/find",
             jar : true
-
         },
-    function(error,response,body){
-
-        if (!error && response.statusCode == 200) {
-                 console.log(body);
-
-            var filename = category + ".json";
-            fs.writeFileSync(filename,downloadCategory(category,categoryelement));
-
+        function(error,response,body){
+            if (!error && response.statusCode == 200) {
+                console.log(body);
+                var categoryfilename = __dirname + "/json/" + category + ".json";
+                fs.writeFileSync(categoryfilename,body);
             } else {
                 console.log(error) ;
             }
-
-        });
+        }
+    );
 
 }
 
@@ -33,7 +29,6 @@ module.exports.main = function(categories, jobdone){
                 email:'gal@gal.it',
                 password: "gal"
             }
-
         },
         function(error,response,body){
             if (!error && response.statusCode == 302) {
@@ -43,11 +38,3 @@ module.exports.main = function(categories, jobdone){
         }
     );
 };
-
-
-module.exports.main(["comuni","affittacamere"],function(err){
-    console.log(err) ;
-});
-
-
-

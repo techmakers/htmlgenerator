@@ -11,13 +11,23 @@ function processcategory(category){
 }
 
 function processcategorycontent(category,categorycontent){
-	//console.log(categorycontent);
+	/*
+	* Scopo:
+	* 	- avere un file index.json contenente solo i category element che hanno il gal, nella cartella degli html della categoria
+	* 	- creare il file html solo per i suddetti
+	* */
+
+	// aggiungere un array vuoto che verrà poi salvato nel file index.json
+
 	var categorycontentarray = JSON.parse(categorycontent);
 	console.log(categorycontentarray.length);
 	for (var i=0; i<categorycontentarray.length;i++){
 		var categoryelement = categorycontentarray[i];
+		// aggiungere il controllo sul gal e processare solo se ha il gal
 		processcategoryelement(category,categoryelement);
+		// solo se ha il gal, aggiungere il categoryelement all'array
 	}
+	// salvare l'array nel file index.json, usando JSON.stringify per confertire da array a stringa json e salvare nel file
 }
 
 function processcategoryelement(category,categoryelement){
@@ -46,4 +56,4 @@ module.exports.main = function(categories){
 		var category = categories[i];
 		processcategory(category);
 	}
-}
+};
