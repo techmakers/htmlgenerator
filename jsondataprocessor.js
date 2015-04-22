@@ -1,6 +1,7 @@
 var fs = require("fs");
 var Mustache = require("mustache");
 
+
 function processcategory(category){
 	console.log(category);
 	var categoryfilename = __dirname + "/json/" + category + ".json";
@@ -18,17 +19,28 @@ function processcategorycontent(category,categorycontent){
 	* */
 
 	// aggiungere un array vuoto che verrà poi salvato nel file index.json
+	var galfile= [];
 
 	var categorycontentarray = JSON.parse(categorycontent);
 	console.log(categorycontentarray.length);
 	for (var i=0; i<categorycontentarray.length;i++){
 		var categoryelement = categorycontentarray[i];
 		// aggiungere il controllo sul gal e processare solo se ha il gal
-		processcategoryelement(category,categoryelement);
-		// solo se ha il gal, aggiungere il categoryelement all'array
+
+	for(var i=0; i< categoryelement.gal.length;i++ ){
+		if(categoryelement.gal[i] !== "" && categoryelement.gal[i] !== null) {
+		galfile.push(categoryelement.gal[i])
+		}
+		galfile = JSON.stringify(categoryelement)
 	}
+		processcategoryelement(category,categoryelement);
+	}
+
+	// solo se ha il gal, aggiungere il categoryelement all'array
 	// salvare l'array nel file index.json, usando JSON.stringify per confertire da array a stringa json e salvare nel file
+
 }
+
 
 function processcategoryelement(category,categoryelement){
 	console.log(category,categoryelement.name);
