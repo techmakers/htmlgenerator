@@ -4,7 +4,7 @@
 
 var categories =[
     "comuni",
-    "affittacamere",
+   "affittacamere",
     "ristoranti",
     "alberghidiffusi",
     "agriturismi",
@@ -22,7 +22,13 @@ var categories =[
     "residenzeturistiche",
     "rifugi",
     "strutturericettive",
-    "villaggituristici"
+    "villaggituristici",
+    "itinerarioenogastronomico",
+    "itinerarioagroalimentare",
+    "itinerariocultura",
+    "itinerarioescursionistico"
+
+
 ];
 
 var jsondownloader = require("./jsondownloader") ;

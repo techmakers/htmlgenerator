@@ -31,7 +31,7 @@ function processcategorycontent(category,categorycontent){
 		if(categoryelement.gal[i] !== "" && categoryelement.gal[i] !== null) {
 		galfile.push(categoryelement.gal[i])
 		}
-		galfile = JSON.stringify(categoryelement)
+		galfile = JSON.stringify(categoryelement.gal);
 	}
 		processcategoryelement(category,categoryelement);
 	}
