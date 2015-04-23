@@ -1,7 +1,6 @@
 var fs = require("fs");
 var Mustache = require("mustache");
 
-
 function processcategory(category){
 	//console.log(category);
 	var categoryfilename = __dirname + "/json/" + category + ".json";
@@ -21,6 +20,7 @@ function processcategorycontent(category,categorycontent){
 	// aggiungere un array vuoto che verrà poi salvato nel file index.json
 	var galfile= [];
 
+
 	var categorycontentarray = JSON.parse(categorycontent);
 	//console.log(categorycontentarray.length);
 	for (var i=0; i<categorycontentarray.length;i++){
@@ -31,9 +31,12 @@ function processcategorycontent(category,categorycontent){
 		if (categoryelement.gal) {
 			galfile.push(categoryelement);
 			processcategoryelement(category, categoryelement);
-		}
+		}	
+	
 	}
 
+	galfile = JSON.stringify(categoryelement);
+	
 	// solo se ha il gal, aggiungere il categoryelement all'array
 	// salvare l'array nel file index.json, usando JSON.stringify per confertire da array a stringa json e salvare nel file
 	//console.log(galfile) ;
@@ -51,7 +54,7 @@ function processcategoryelement(category,categoryelement){
 	
 	var filename = categoryelement.name.replace(/[^a-z0-9]/gi,"_").toLowerCase();
 	filename = categoryfolder + "/" + filename + ".html";
-	console.log(filename);
+	//console.log(filename);
 	fs.writeFileSync(filename,processtemplate(category,categoryelement));
 }
 
