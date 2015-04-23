@@ -7,6 +7,6 @@
 	  "mustache" : "*",
 	  "request" : "*",
 	  "async" : "*",
-	  "tough-cookie": "*"
-	}
+	  "tough-cookie": "*",
+	  "jsonfile":"jsonfile"
 }

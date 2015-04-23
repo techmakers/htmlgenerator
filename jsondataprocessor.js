@@ -1,5 +1,6 @@
 var fs = require("fs");
 var Mustache = require("mustache");
+var jf = require('jsonfile')
 
 function processcategory(category){
 	//console.log(category);
@@ -18,7 +19,7 @@ function processcategorycontent(category,categorycontent){
 	* */
 
 	// aggiungere un array vuoto che verrà poi salvato nel file index.json
-	var galfile= [];
+	var galfile = [];
 
 
 	var categorycontentarray = JSON.parse(categorycontent);
@@ -35,11 +36,13 @@ function processcategorycontent(category,categorycontent){
 	
 	}
 
-	galfile = JSON.stringify(categoryelement);
-	
+	var nogal = JSON.stringify(galfile);
+	var index = __dirname + '/index' + '.json';
+	jf.writeFileSync(index,nogal);
+
 	// solo se ha il gal, aggiungere il categoryelement all'array
 	// salvare l'array nel file index.json, usando JSON.stringify per confertire da array a stringa json e salvare nel file
-	//console.log(galfile) ;
+	console.log(jf.writeFileSync(index,nogal)) ;
 }
 
 
