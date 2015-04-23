@@ -2,19 +2,20 @@ var request = require('request');
 var async = require('async') ;
 var fs = require('fs');
 
-function downloadCategory(category){
+function downloadCategory(category,cb){
     request.get({
             url:"http://portofino.celeweb.eu:1337/" + category + "/find",
             jar : true
         },
         function(error,response,body){
-            if (!error && response.statusCode == 200) {
-                console.log(body);
+            if (error) return cb(error) ;
+            if (response.statusCode == 200) {
                 var categoryfilename = __dirname + "/json/" + category + ".json";
                 fs.writeFileSync(categoryfilename,body);
             } else {
-                console.log(error) ;
+                console.log("statuscode",response.statusCode) ;
             }
+            cb() ;
         }
     );
 

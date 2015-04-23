@@ -3,9 +3,9 @@ var Mustache = require("mustache");
 
 
 function processcategory(category){
-	console.log(category);
+	//console.log(category);
 	var categoryfilename = __dirname + "/json/" + category + ".json";
-	console.log(categoryfilename);
+	//console.log(categoryfilename);
 	
 	var categorycontent = fs.readFileSync(categoryfilename,"utf8");
 	processcategorycontent(category,categorycontent);
@@ -22,31 +22,29 @@ function processcategorycontent(category,categorycontent){
 	var galfile= [];
 
 	var categorycontentarray = JSON.parse(categorycontent);
-	console.log(categorycontentarray.length);
+	//console.log(categorycontentarray.length);
 	for (var i=0; i<categorycontentarray.length;i++){
 		var categoryelement = categorycontentarray[i];
 		// aggiungere il controllo sul gal e processare solo se ha il gal
 
-	for(var i=0; i< categoryelement.gal.length;i++ ){
-		if(categoryelement.gal[i] !== "" && categoryelement.gal[i] !== null) {
-		galfile.push(categoryelement.gal[i])
+		//if(categoryelement.gal !== "" && categoryelement.gal !== null) {
+		if (categoryelement.gal) {
+			galfile.push(categoryelement);
+			processcategoryelement(category, categoryelement);
 		}
-		galfile = JSON.stringify(categoryelement.gal);
-	}
-		processcategoryelement(category,categoryelement);
 	}
 
 	// solo se ha il gal, aggiungere il categoryelement all'array
 	// salvare l'array nel file index.json, usando JSON.stringify per confertire da array a stringa json e salvare nel file
-
+	//console.log(galfile) ;
 }
 
 
 function processcategoryelement(category,categoryelement){
-	console.log(category,categoryelement.name);
+	//console.log(category,categoryelement.name);
 	
 	var categoryfolder = __dirname + "/html/" + category;
-	console.log(categoryfolder);
+	//console.log(categoryfolder);
 	if (!fs.existsSync(categoryfolder)){
 		fs.mkdirSync(categoryfolder);
 	}
