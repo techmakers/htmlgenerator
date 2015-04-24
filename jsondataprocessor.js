@@ -35,14 +35,14 @@ function processcategorycontent(category,categorycontent){
 	
 	}
 
-	var indexfolder = __dirname +"/index/";
+	var indexfolder = __dirname +"/html/"+ category;
 	//console.log(categoryfolder);
 	if (!fs.existsSync(indexfolder)){
 		fs.mkdirSync(indexfolder);
 	}
   	
 	var nogal = JSON.stringify(galfile);
-	var index = indexfolder + "/" + category + ".json";
+	var index = indexfolder + "/index"+ ".json";
 	fs.writeFileSync(index,nogal,"utf8");
 
 	// solo se ha il gal, aggiungere il categoryelement all'array
