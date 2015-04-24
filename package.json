@@ -7,5 +7,7 @@
 	  "mustache" : "*",
 	  "request" : "*",
 	  "async" : "*",
-	  "tough-cookie": "*"
+	  "tough-cookie": "*",
+	  "ssh2":"*"
+	}
 }
