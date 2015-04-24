@@ -45,6 +45,9 @@ function processcategorycontent(category,categorycontent){
 	var index = indexfolder + "/index"+ ".json";
 	fs.writeFileSync(index,nogal,"utf8");
 
+    // scriviamo anche in una cartella dove raggruppiamo tutti i json da passare all'app
+	fs.writeFileSync(__dirname + "/jsonapp/" + category + ".json",nogal,"utf8");
+
 	// solo se ha il gal, aggiungere il categoryelement all'array
 	// salvare l'array nel file index.json, usando JSON.stringify per confertire da array a stringa json e salvare nel file
 
