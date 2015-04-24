@@ -1,6 +1,5 @@
 var fs = require("fs");
 var Mustache = require("mustache");
-var jf = require('jsonfile')
 
 function processcategory(category){
 	//console.log(category);
@@ -36,13 +35,19 @@ function processcategorycontent(category,categorycontent){
 	
 	}
 
+	var indexfolder = __dirname +"/index/";
+	//console.log(categoryfolder);
+	if (!fs.existsSync(indexfolder)){
+		fs.mkdirSync(indexfolder);
+	}
+  	
 	var nogal = JSON.stringify(galfile);
-	var index = __dirname + '/index' + '.json';
-	jf.writeFileSync(index,nogal);
+	var index = indexfolder + "/" + category + ".json";
+	fs.writeFileSync(index,nogal,"utf8");
 
 	// solo se ha il gal, aggiungere il categoryelement all'array
 	// salvare l'array nel file index.json, usando JSON.stringify per confertire da array a stringa json e salvare nel file
-	console.log(jf.writeFileSync(index,nogal)) ;
+
 }
 
 
