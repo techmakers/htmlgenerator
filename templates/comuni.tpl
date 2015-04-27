@@ -13,9 +13,13 @@ area:{{area}}
 mappa:{{{map}}}
 nome:{{name}}
 posizione:{{position}}
+<<<<<<< Updated upstream
 {{#result}}
 risultato:{{provider}}
+          {{formatted}}
+          {{country}}
 {{/result}}
+
 riviera:{{riviera}}
 regione:{{state}}
 wiki:{{wiki}}

@@ -7,7 +7,16 @@
 	  "mustache" : "*",
 	  "request" : "*",
 	  "async" : "*",
+<<<<<<< Updated upstream
 	  "tough-cookie": "*",
 	  "ssh2":"*"
 	}
+=======
+	  "tough-cookie": "*",
+  "node-sftp":"*"
+<<<<<<< Updated upstream
+=======
+	  //"jsonfile":"jsonfile"
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
 }
