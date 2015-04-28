@@ -7,16 +7,18 @@
 	  "mustache" : "*",
 	  "request" : "*",
 	  "async" : "*",
-<<<<<<< Updated upstream
+//<<<<<<< Updated upstream
 	  "tough-cookie": "*",
 	  "ssh2":"*"
+	  "libssh2": {
+		"url": "http://www.libssh2.org/download/libssh2-1.5.0.tar.gz",
+		"version": "1.5.0"
+	  },
 	}
-=======
+//=======
 	  "tough-cookie": "*",
-  "node-sftp":"*"
-<<<<<<< Updated upstream
-=======
+ 
+//=======
 	  //"jsonfile":"jsonfile"
->>>>>>> Stashed changes
->>>>>>> Stashed changes
+//>>>>>>> Stashed changes
 }
