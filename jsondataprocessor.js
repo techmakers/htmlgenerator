@@ -65,12 +65,11 @@ function processcategoryelement(category,categoryelement){
 	
 	var filename = categoryelement.name.replace(/[^a-z0-9]/gi,"_").toLowerCase();
 	filename = categoryfolder + "/" + filename + ".html";
-	//console.log(filename);
 	fs.writeFileSync(filename,processtemplate(category,categoryelement));
 }
 
 function processtemplate(category,categoryelement){
-	var templatefilename = __dirname + "/templates/" + category + ".tpl";
+	var templatefilename = __dirname + "/templates/" + category + ".html";
 	var templatecontent = fs.readFileSync(templatefilename,"utf8");
 	return Mustache.render(templatecontent, categoryelement);
 }
