@@ -33,11 +33,11 @@ var categories =[
 var jsondownloader = require("./jsondownloader") ;
 var jsondataprocessor = require("./jsondataprocessor") ;
 var jsonphotodownloader = require("./jsonPhotoDownloader") ;
-/*
+
 jsondownloader.main(categories,function(err){
     if (err) return console.log(err);
     jsondataprocessor.main(categories) ;
 }) ;
-*/
+
 
 jsonphotodownloader.main();

@@ -42,7 +42,7 @@ function downloadPhoto(obj,cb){
 
 module.exports.main = function(){
     downloadFileList(function(err){
-        console.log("filelist",fileList) ;
+        // mettere qui async
         downloadPhoto(fileList[0],function(err){
             console.log("err",err) ;
         }) ;

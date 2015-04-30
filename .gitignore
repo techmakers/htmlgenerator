@@ -1,7 +1,8 @@
 
-html/*
 node_modules/*
 
 .idea/*
-json/*
-jsonapp/*
+json/
+jsonapp/
+site/html/
+site/photos/
