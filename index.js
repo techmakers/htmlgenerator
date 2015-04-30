@@ -3,8 +3,9 @@
  */
 
 var categories =[
+
     "comuni",
-    "affittacamere"/*,
+    "affittacamere",
     "ristoranti",
     "alberghidiffusi",
     "agriturismi",
@@ -26,7 +27,7 @@ var categories =[
     "itinerarioenogastronomico",
     "itinerarioagroalimentare",
     "itinerariocultura",
-    "itinerarioescursionistico"*/
+    "itinerarioescursionistico"
 ];
 
 

@@ -1,74 +1,50 @@
-{{name}} ristorante {{id}}
-indirizzo:{{address}}
-{{#city.length}} 
-città:{{city}}
-{{/city.length}} 
-{{^city.length}}city: nessun dato{{/city.length}}
-{{#zipcode.length}} 
-cap:{{zipcode}}
-{{/zipcode.length}} 
-{{^zipcode.length}}cap: nessun dato{{/zipcode.length}}
-{{#province.length}} 
-provincia:{{province}}
-{{/province.length}} 
-{{^province.length}}provincia: nessun dato{{/province.length}}
-{{#area.length}} 
-area:{{area}}
-{{/area.length}} 
-{{^area.length}}area: nessun dato{{/area.length}}
-{{#phone.length}} 
-telefono:{{phone}}
-{{/phone.length}} 
-{{^phone.length}}telefono: nessun dato{{/phone.length}}
-{{#phone2.length}} 
-telefono2:{{phone2}}
-{{/phone2.length}} 
-{{^phone2.length}}telefono2: nessun dato{{/phone2.length}}
-{{#email.length}} 
-email:{{email}}
-{{/email.length}} 
-{{^email.length}}email: nessun dato{{/email.length}}
-{{#website.length}} 
-sitoweb:{{website}}
-{{/website.length}} 
-{{^website.length}}sitoweb: nessun dato{{/website.length}}
-{{#contact.length}} 
-contatti:{{contact}}
-{{/contact.length}} 
-{{^contact.length}}contatti: nessun dato{{/contact.length}}
-{{#typical.length}} 
-tipico:{{typical}}
-{{/typical.length}} 
-{{^typical.length}}tipico: nessun dato{{/typical.length}}
-{{#openingPeriod.length}} 
-periodo di apertura:{{openingPeriod}}
-{{/openingPeriod.length}} 
-{{^openingPeriod.length}}pariodo di apertura: nessun dato{{/openingPeriod.length}}
-{{#parking.length}} 
-parcheggio:{{parking}}
-{{/parking.length}} 
-{{^parking.length}}parcheggio: nessun dato{{/parking.length}}
-{{#covered.length}} 
-coperti:{{covered}}
-{{/covered.length}} 
-{{^covered.length}}coperti: nessun dato{{/covered.length}}
-{{#outdoor.length}} 
-esterno:{{outdoor}}
-{{/outdoor.length}} 
-{{^outdoor.length}}esterno: nessun dato{{/outdoor.length}}
-{{#events.length}} 
-eventi:{{events}}
-{{/events.length}} 
-{{^events.length}}eventi: nessun dato{{/events.length}}
-{{#lat.length}} 
-latitudine:{{lat}}
-{{/lat.length}} 
-{{^lat.length}}latitudine: nessun dato{{/lat.length}}
-{{#lng.length}} 
-longitudine:{{lng}}
-{{/lng.length}} 
-{{^lng.length}}longitudine: nessun dato{{/lng.length}}
-{{#gal.length}} 
-gal:{{gal}}
-{{/gal.length}} 
-{{^gal.length}}gal: nessun dato{{/gal.length}}
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>{{name}}</title>
+<link href="../../assets/style.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Raleway">
+</head>
+
+<body>
+
+<div class="container">
+
+  <div class="header">
+  <img src="../../assets/file/logoAltraRiviera.png" width="164" height="80">
+  <!-- end .header --></div>
+
+  <div class="header2">
+  <h1>{{name}}</h1>
+  <!-- end .header --></div>
+
+  <div class="content">
+
+    <!-- end .image --></div>
+
+    <div class="intro">
+    {{stars}}
+    <!-- end .intro --></div>
+
+
+    <div class="link">
+    	<div class="download">
+        <img class="space" src="../../assets/file/download.png" width="30" height="30" alt="click to download the app"><h5><a href="../index.html">DOWNLOAD<br />
+        THE APP</a></h5>
+    	<!-- end .download --></div>
+    	<div class="website">
+        <img class="space" src="../../assets/file/web.png" width="30" height="30" alt="go to website"><h5><a href="http://www.turismoinliguria.it">WEBSITE<br />
+        TURISMO LIGURIA</a></h5>
+    	<!-- end .website --></div>
+    <!-- end .link --></div>
+
+
+    <div class="text">
+    <br>{{address}}</br> <br>{{phone}}</br><br>{{website}}</br><br>{{email}}</br>
+      <!-- end .text --></div>
+
+    <!-- end .content --></div>
+  <!-- end .container --></div>
+</body>
+</html>

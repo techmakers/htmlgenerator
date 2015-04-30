@@ -20,12 +20,11 @@
   <!-- end .header --></div>
 
   <div class="content">
-    <div class="image">
-    <img src="../../assets/file/foto.jpg" width="960" height="720" alt="comune nome" >
+
     <!-- end .image --></div>
 
     <div class="intro">
-    {{shorttext}}
+    {{stars}}
     <!-- end .intro --></div>
 
 
@@ -42,7 +41,7 @@
 
 
     <div class="text">
-    {{longtext}}
+    <br>{{address}}</br> <br>{{phone}}</br><br>{{website}}</br><br>{{email}}</br>
       <!-- end .text --></div>
 
     <!-- end .content --></div>
