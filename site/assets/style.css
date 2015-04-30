@@ -1,0 +1,191 @@
+@charset "utf-8";
+body {
+	font-family: 'Raleway';
+	background-color: #42413C;
+	margin: 0;
+	padding: 0;
+	color: #000;
+}
+
+
+ul, ol, dl { 
+	padding: 0;
+	margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+	margin-top: 0;
+	padding-right: 15px;
+	/* [disabled]padding-left: 15px; */
+}
+
+a img { 
+	border: none;
+}
+
+a:link, a:visited {
+	color: #156123;
+	text-decoration: none; 
+}
+
+a:hover, a:active, a:focus { 
+	text-decoration: none;
+}
+
+img.space {
+	float:left;
+	padding: 0 15px 0 0;
+}
+
+img.boxs {
+	padding: 30px 0 0 0;
+}
+
+img.get {
+	padding: 30px 20px 0 0;
+}
+
+img.get2 {
+	padding: 45px 0 0 0;
+}
+
+/* contenitori */
+.container {
+	width: 960px;
+	background-color: #fff;
+	margin: 0 auto; /* Il valore automatico sui lati, abbinato alla larghezza, produce un layout centrato. */
+}
+
+.header {
+	background-color: #f8a932;
+	text-align: center;
+	padding: 20px 0 10px 0;
+	position:static;
+}
+
+.header2 {
+	background-color: #156123;
+	text-transform: capitalize;
+	color: #fff;
+	text-align: center;
+	padding: 20px 0 5px 0;
+	position:static;
+}
+
+.image {
+	position:static;
+	height:720px;
+}
+
+.intro {
+	background-color: #156123;
+	color: #fff;
+	padding: 15px 15px 15px 15px;
+}
+
+.description {
+	height: 400px;
+	background-color: #156123;
+	padding: 15px 0px 10px 15px;
+	box-shadow: 0px 0px 10px 0px #666666;
+	position:relative;
+	color: #fff;
+}
+
+.phone {
+	position: absolute;
+	left: 0px;
+	text-align: right;
+	width: 30%;
+	padding-top: 20px;
+}
+.available {
+	position: absolute;
+	left: 288px;
+	text-align: center;
+	font-size: 25px;
+	width: 60%;
+	padding: 70px 0 0 50px;
+}
+
+.link {
+	height: 35px;
+	background-color: #e7e6d3;
+	text-transform: capitalize;
+	padding: 15px 0px 10px 15px;
+	box-shadow: 0px 0px 10px 0px #666666;
+	position:relative;
+}
+
+.download {
+	left: 15px;
+	position:absolute;
+	width: 180px;
+}
+
+.website {
+	right: 0px;
+	position: absolute;
+	width: 207px;
+}
+
+.text {
+	padding: 20px 15px 20px 15px;
+	position:static;	
+}
+
+.box {
+	padding: 20px 15px 20px 15px;
+	position: relative;
+	height: 380px;
+	color: #156123;
+}
+
+.boxSX {
+	position: absolute;
+	left: 0px;
+	text-align: center;
+	width: 25%;
+	padding: 60px 0 0 120px;
+}
+.boxCN {
+	position: absolute;
+	left: 360px;
+	text-align: center;
+	width: 25%;
+	padding-top: 60px;
+}
+.boxDX {
+	position: absolute;
+	left: 600px;
+	text-align: center;
+	width: 25%;
+	padding-top: 60px;
+}
+
+.europe {
+	text-align: center;
+	padding: 70px 10px;
+	position:static;
+}
+
+.content {
+	padding: 0 0 0px 0;
+}
+
+
+/* ~~ Classi float/clear varie ~~ */
+.fltrt {  /* questa classe può essere utilizzata per applicare un float a un elemento a destra nella pagina. L'elemento con float deve precedere l'elemento al quale deve essere affiancato sulla pagina. */
+	float: right;
+	margin-left: 8px;
+}
+.fltlft { /* questa classe può essere utilizzata per applicare un float a un elemento a sinistra nella pagina. L'elemento con float deve precedere l'elemento al quale deve essere affiancato sulla pagina. */
+	float: left;
+	margin-right: 8px;
+}
+.clearfloat { /* Questa classe può essere inserita in un <br /> o in un div vuoto come elemento finale subito dopo l'ultimo div con float (all'interno del #container) se il #footer sul viene rimosso o estratto dal #container. */
+	clear:both;
+	height:0;
+	font-size: 1px;
+	line-height: 0px;
+}

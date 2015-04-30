@@ -35,7 +35,7 @@ function processcategorycontent(category,categorycontent){
 	
 	}
 
-	var indexfolder = __dirname +"/html/"+ category;
+	var indexfolder = __dirname +"/site/html/"+ category;
 	//console.log(categoryfolder);
 	if (!fs.existsSync(indexfolder)){
 		fs.mkdirSync(indexfolder);
@@ -57,7 +57,7 @@ function processcategorycontent(category,categorycontent){
 function processcategoryelement(category,categoryelement){
 	//console.log(category,categoryelement.name);
 	
-	var categoryfolder = __dirname + "/html/" + category;
+	var categoryfolder = __dirname + "/site/html/" + category;
 	//console.log(categoryfolder);
 	if (!fs.existsSync(categoryfolder)){
 		fs.mkdirSync(categoryfolder);
@@ -69,7 +69,7 @@ function processcategoryelement(category,categoryelement){
 }
 
 function processtemplate(category,categoryelement){
-	var templatefilename = __dirname + "/templates/" + category + ".html";
+	var templatefilename = __dirname + "/templates/" + category + ".tpl";
 	var templatecontent = fs.readFileSync(templatefilename,"utf8");
 	return Mustache.render(templatecontent, categoryelement);
 }
