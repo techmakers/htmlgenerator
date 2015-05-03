@@ -40,11 +40,15 @@ function downloadPhoto(obj,cb){
         .pipe(fs.createWriteStream(path)) ;
 }
 
-module.exports.main = function(){
-    downloadFileList(function(err){
-        // mettere qui async
-        downloadPhoto(fileList[0],function(err){
-            console.log("err",err) ;
-        }) ;
-    }) ;
-}
+module.exports.main = function() {
+    downloadFileList(function (err) {
+        // async
+    async.each(fileList,downloadPhoto,function(err){
+        if(downloadPhoto !== err);
+    });
+        downloadPhoto(fileList, function (err) {
+                console.log("err", err);
+
+        });
+    });
+};
