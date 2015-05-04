@@ -46,13 +46,20 @@ function processcategorycontent(category,categorycontent){
 	fs.writeFileSync(index,nogal,"utf8");
 
     // scriviamo anche in una cartella dove raggruppiamo tutti i json da passare all'app
-	fs.writeFileSync(__dirname + "/jsonapp/" + category + ".json",nogal,"utf8");
+	fs.writeFileSync(__dirname + "/site/jsonapp/" + category + ".json",nogal,"utf8");
 
 	// solo se ha il gal, aggiungere il categoryelement all'array
 	// salvare l'array nel file index.json, usando JSON.stringify per confertire da array a stringa json e salvare nel file
 
 }
 
+
+function findPhotoIdByCategoryNameAndId(categoryName,id){
+	var result = module.exports.fileList.filter(function(v){
+		return (v.classname === categoryName && v.recordid === id);
+	}) ;
+	return result[0] && result[0].id ;
+}
 
 function processcategoryelement(category,categoryelement){
 	//console.log(category,categoryelement.name);
@@ -62,7 +69,15 @@ function processcategoryelement(category,categoryelement){
 	if (!fs.existsSync(categoryfolder)){
 		fs.mkdirSync(categoryfolder);
 	}
-	
+
+	// in fileList, dobbiamo cercare gli elementi che hanno:
+	// classname = category
+	// e
+	// recordid = categoryelement.id
+
+
+	categoryelement.photoid = findPhotoIdByCategoryNameAndId(category,categoryelement.id) ;
+
 	var filename = categoryelement.name.replace(/[^a-z0-9]/gi,"_").toLowerCase();
 	filename = categoryfolder + "/" + filename + ".html";
 	fs.writeFileSync(filename,processtemplate(category,categoryelement));
@@ -74,7 +89,8 @@ function processtemplate(category,categoryelement){
 	return Mustache.render(templatecontent, categoryelement);
 }
 
-module.exports.main = function(categories){
+module.exports.main = function(fileList,categories){
+	module.exports.fileList = fileList ;
 	for (var i=0; i<categories.length;i++){
 		var category = categories[i];
 		processcategory(category);

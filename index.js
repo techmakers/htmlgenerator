@@ -35,10 +35,14 @@ var jsondownloader = require("./jsondownloader") ;
 var jsondataprocessor = require("./jsondataprocessor") ;
 var jsonphotodownloader = require("./jsonPhotoDownloader") ;
 
-jsondownloader.main(categories,function(err){
-    if (err) return console.log(err);
-    jsondataprocessor.main(categories) ;
-}) ;
+/*
 
+*/
 
-jsonphotodownloader.main();
+jsonphotodownloader.main(function(err,fileList){
+    if (err) return console.log("jsonphotodownloader",err);
+    jsondownloader.main(categories,function(err){
+        if (err) return console.log("jsondowloader",err);
+        jsondataprocessor.main(fileList,categories) ;
+    }) ;
+});

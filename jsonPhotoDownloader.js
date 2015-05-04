@@ -35,20 +35,27 @@ function downloadPhoto(obj,cb){
     request
         .get("http://portofino.celeweb.eu:1337/fileuploads/receive/"+obj.id)
         .on('error', function(err) {
-            console.log(err)
+            console.log(obj.id,err) ;
+        })
+        .on("end",function(err){
+           cb(err);
         })
         .pipe(fs.createWriteStream(path)) ;
 }
 
-module.exports.main = function() {
-    downloadFileList(function (err) {
-        // async
-    async.each(fileList,downloadPhoto,function(err){
-        if(downloadPhoto !== err);
-    });
-        downloadPhoto(fileList, function (err) {
-                console.log("err", err);
+module.exports.main = function(cb) {
 
-        });
+    downloadFileList(function (err) {
+        if (err) return console.log("downloadfilelist",err) ;
+        // async
+        async.eachLimit(
+            fileList,
+            100,
+            downloadPhoto,
+            function (err) {
+                if (err) console.log("dowloadphoto",err);
+                cb(err,fileList);
+            }
+        );
     });
 };

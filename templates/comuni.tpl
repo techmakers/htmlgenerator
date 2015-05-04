@@ -1,4 +1,3 @@
-<<<<<<< Updated upstream
 <!doctype html>
 <html>
 <head>
@@ -22,7 +21,7 @@
 
   <div class="content">
     <div class="image">
-    <img src="../../assets/file/foto.jpg" width="960" height="720" alt="comune nome" >
+    <img src="../../photos/{{photoid}}.jpg" width="960" height="720" alt="comune nome" >
     <!-- end .image --></div>
 
     <div class="intro">
@@ -50,31 +49,3 @@
   <!-- end .container --></div>
 </body>
 </html>
-=======
-
-comune  {{id}}
-zona altimetrica:{{AltimetricZone}}
-altitudine:{{Altitude}}
-città:{{City}}
-{{#MainCity.length}}
-città principale:{{MainCity}}
-{{/MainCity.length}}
-{{^MainCity.length}}città principale: nessuna{{/MainCity.length}}
-zona montuosa:{{MountainZone}}
-popolazione:{{Population}}
-zona marina:{{Seaside}}
-area:{{area}}
-mappa:{{{map}}}
-nome:{{name}}
-posizione:{{position}}
-{{#result}}
-risultato:{{provider}}
-{{/result}}
-riviera:{{riviera}}
-regione:{{state}}
-wiki:{{wiki}}
-{{#zipcode.length}}
-cap:{{zipcode}}
-{{/zipcode.length}}
-{{^zipcode.length}}cap: nessun dato{{/zipcode.length}}
->>>>>>> Stashed changes
