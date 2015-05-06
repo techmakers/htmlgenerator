@@ -26,8 +26,11 @@ var categories =[
     "villaggituristici",
     "itinerarioenogastronomico",
     "itinerarioagroalimentare",
-    "itinerariocultura",
-    "itinerarioescursionistico"
+    "itinerariomercatini",
+    "itinerarioescursioni",
+    "itinerarioarteestoria",
+    "itinerarioartigianato",
+    "itinerariomeravigliedellanatura"
 ];
 
 
@@ -35,14 +38,14 @@ var jsondownloader = require("./jsondownloader") ;
 var jsondataprocessor = require("./jsondataprocessor") ;
 var jsonphotodownloader = require("./jsonPhotoDownloader") ;
 
-/*
 
-*/
 
-jsonphotodownloader.main(function(err,fileList){
-    if (err) return console.log("jsonphotodownloader",err);
-    jsondownloader.main(categories,function(err){
-        if (err) return console.log("jsondowloader",err);
-        jsondataprocessor.main(fileList,categories) ;
-    }) ;
+jsonphotodownloader.main(function(err,fileList) {
+    if (err) return console.log("jsonphotodownloader", err);
+    jsondataprocessor.main(fileList, categories);
 });
+    jsondownloader.main(categories,function(err) {
+        if (err) return console.log("jsondowloader", err);
+
+    });
+
