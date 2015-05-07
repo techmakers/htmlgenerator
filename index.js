@@ -26,8 +26,11 @@ var categories =[
     "villaggituristici",
     "itinerarioenogastronomico",
     "itinerarioagroalimentare",
-    "itinerariocultura",
-    "itinerarioescursionistico"
+    "itinerarioarteestoria",
+    "itinerarioescursioni",
+    "itinerariomercatini",
+    "itinerarioartigianato",
+    "itinerariomeravigliedellanatura"
 ];
 
 

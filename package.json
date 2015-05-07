@@ -3,22 +3,11 @@
 	"version": "0.0.1",
 	"description": "htmlgenerator",
 	"author": "mara sabini <marasabini@live.it>",
-  	"dependencies":{
-	  "mustache" : "*",
-	  "request" : "*",
-	  "async" : "*",
-//<<<<<<< Updated upstream
+  	"dependencies": {
+	  "mustache": "*",
+	  "request": "*",
+	  "async": "*",
 	  "tough-cookie": "*",
-	  "ssh2":"*"
-	  "libssh2": {
-		"url": "http://www.libssh2.org/download/libssh2-1.5.0.tar.gz",
-		"version": "1.5.0"
-	  },
+	  "ftp-deploy":"*"
 	}
-//=======
-	  "tough-cookie": "*",
- 
-//=======
-	  //"jsonfile":"jsonfile"
-//>>>>>>> Stashed changes
 }

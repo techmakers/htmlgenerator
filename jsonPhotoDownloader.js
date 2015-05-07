@@ -33,9 +33,12 @@ function downloadFileList(cb){
 function downloadPhoto(obj,cb){
     var path = __dirname + "/site/photos/"+ obj.id + ".jpg" ;
     request
-        .get("http://portofino.celeweb.eu:1337/fileuploads/receive/"+obj.id)
+        .get({
+            url: "http://portofino.celeweb.eu:1337/fileuploads/receive/" + obj.id
+        })
         .on('error', function(err) {
             console.log(obj.id,err) ;
+            cb();
         })
         .on("end",function(err){
            cb(err);
