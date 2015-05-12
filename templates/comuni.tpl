@@ -21,7 +21,7 @@
 
   <div class="content">
     <div class="image">
-    <img src="../../photos/{{photoid}}.jpg" width="960" height="720" alt="comune nome" >
+     <img src="../../photos/{{photoid}}.jpg"width="960" height="720" alt={{name}} >
     <!-- end .image --></div>
 
     <div class="intro">

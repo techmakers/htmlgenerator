@@ -16,18 +16,18 @@
   <!-- end .header --></div>
 
   <div class="header2">
-  <h1>{{title}}</h1>
+  <h1>{{name}}</h1>
   <!-- end .header --></div>
 
   <div class="content">
     <div class="image">
-    <img src="../../assets/file/foto.jpg" width="960" height="720" alt="comune nome" >
+    <img src="../../photos/{{photoid}}.jpg"width="960" height="720" alt={{name}} >
     <!-- end .image --></div>
 
-    <div class="intro">
-    {{steps}}
-    <!-- end .intro --></div>
-
+     <div class="intro">
+      <br>{{steps}}</br>
+      <br>{{products}}</br>
+      <!-- end .intro --></div>
 
     <div class="link">
     	<div class="download">
