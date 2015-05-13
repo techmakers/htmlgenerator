@@ -16,7 +16,25 @@
   <!-- end .header --></div>
 
   <div class="header2">
-  <h1>{{name}}</h1>
+ <h1>{{name}}</h1>
+<div class="rating">
+
+    {{#stars}}
+    {{stars[0]}}
+
+    {{stars[1]}} <span>★</span>{{stars[1]}}
+
+    {{stars[2]}} <span>★</span><span>★</span>{{stars[2]}}
+
+    {{stars[3]}} <span>★</span><span>★</span><span>★</span>{{stars[3]}}
+
+    {{stars[4]}} <span>★</span><span>★</span><span>★</span><span>★</span>{{stars[4]}}
+
+    {{stars[5]}} <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>{{stars[5]}}
+    {{/stars}}
+
+
+
   <!-- end .header --></div>
 
   <div class="content">
@@ -24,7 +42,7 @@
     <!-- end .image --></div>
 
     <div class="intro">
-    {{stars}}
+
     <!-- end .intro --></div>
 
 
